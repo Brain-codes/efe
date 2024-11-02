@@ -14,7 +14,7 @@ const Navbar = ({ showLogo = true }: { showLogo?: boolean }) => {
       } transition-all duration-500 w-full fixed z-10`}
     >
       {!isOpen ? (
-        <div className="px-[5%] py-10 h-full w-full flex justify-between">
+        <div className="px-[5%] max-[614px]:py-6 py-10 h-full w-full flex justify-between transition-all duration-500">
           {/* {showLogo ? (
             <Image
               src="/images/logo.svg"
@@ -36,7 +36,7 @@ const Navbar = ({ showLogo = true }: { showLogo?: boolean }) => {
             priority
             className={`${
               !showLogo ? "opacity-0" : "opacity-1"
-            } w-[56px] h-[56px] transition-all duration-500`}
+            } w-[56px] h-[56px] max-[614px]:w-[46px] max-[614px]:h-[46px] transition-all duration-500`}
           />
           <Image
             src={darkMode ? "/images/nav.svg" : "/images/nav-dark.svg"}
@@ -46,7 +46,7 @@ const Navbar = ({ showLogo = true }: { showLogo?: boolean }) => {
             priority
             className={` ${
               isOpen ? "rotate-[90deg]" : "rotate-[45deg]"
-            } w-[56px] h-[56px] transition-all duration-500`}
+            } w-[56px] h-[56px] max-[614px]:w-[46px] max-[614px]:h-[46px] transition-all duration-500`}
             onClick={toggleIsOpen}
           />
         </div>
@@ -59,7 +59,7 @@ const Navbar = ({ showLogo = true }: { showLogo?: boolean }) => {
               width={100}
               height={100}
               priority
-              className="w-[56px] h-[56px]"
+              className="w-[56px] h-[56px] max-[614px]:w-[46px] max-[614px]:h-[46px]"
             />
             <Image
               src="/images/nav.svg"
@@ -69,7 +69,7 @@ const Navbar = ({ showLogo = true }: { showLogo?: boolean }) => {
               priority
               className={` ${
                 isOpen ? "rotate-[90deg]" : ""
-              } rotate-0 w-[56px] h-[56px] transition-all duration-500`}
+              } rotate-0 max-[614px]:w-[46px] max-[614px]:h-[46px] w-[56px] h-[56px] transition-all duration-500`}
               onClick={toggleIsOpen}
             />
           </div>

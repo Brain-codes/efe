@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { drukWide, atypNormal, atypLight } from "../fonts";
+import SmoothScroll from "@/components/Lenis/SmoothScroll";
+import PageTransition from "@/components/Transitions/PageTransition";
+import { TransitionProvider } from "@/components/context/TransitionContext";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -11,9 +15,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -37,7 +41,16 @@ export default function RootLayout({
         <link rel="manifest" href="/images/site.webmanifest"></link>
         <link rel="icon" href="/images/favicon.ico" sizes="any" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${drukWide.variable} ${atypNormal.variable} ${atypLight.variable}`}
+      >
+        <SmoothScroll>
+          <TransitionProvider>
+            <PageTransition />
+            {children}
+          </TransitionProvider>
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

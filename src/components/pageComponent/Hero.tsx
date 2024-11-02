@@ -10,20 +10,20 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { useDarkMode } from "../context/DarkModeContext";
+import { useDarkMode } from "@/components/context/DarkModeContext";
 import { HeroWhatIDo } from "@/utils/Constants";
 
 const Hero = () => {
   const [greeting, time] = useGreeting();
-  const { darkMode, toggleDarkMode } = useDarkMode();
+  const { darkMode } = useDarkMode();
   return (
     <div className="h-full w-full">
       <h1 className="absolute z-[-1] top-[-300px] left-[-50px] dark:text-[#1a1a1a6e] text-[#CBCBCB6e] text-[500px] font-black ">
         A
       </h1>
 
-      <div className="">
-        <h5 className="text-black dark:text-white flex items-center gap-2 font-light text-[23px] mt-10 ml-[5%]">
+      <div className="max-[743px]:h-[100dvh] max-[743px]:flex max-[743px]:flex-col ">
+        <h5 className="text-black dark:text-white flex items-center gap-2 font-light text-[23px] mt-10 ml-[5%] max-[614px]:text-[17px] transition-all duration-500">
           {greeting}
           <Image
             src="/images/wave.png"
@@ -38,15 +38,15 @@ const Hero = () => {
         <div className="flex items-center justify-center ">
           <div className="rounded-full p-[50px] bg-primary/5">
             <div className="rounded-full p-[50px] bg-primary/55">
-              <div className="rounded-full p-[300px] bg-primary flex items-center justify-start">
+              <div className="rounded-full md:p-[300px] max-[743px]:p-[220px] p-[179px] bg-primary flex items-center justify-start">
                 <div className="absolute w-full bottom-0 left-0 flex items-center  justify-center ">
                   <div className="h-full relative flex items-start justify-center ">
                     <div className="absolute top-[-13%] hover-element">
-                      <h1 className="text-black dark:text-white font-black text-[172px] leading-[160px] ">
+                      <h1 className="text-black dark:text-white font-black text-[172px] max-[743px]:text-[7.313rem] max-[743px]:leading-[100px] leading-[160px] max-[614px]:text-[4.313rem] transition-all duration-500 max-[614px]:leading-none max-[338px]:text-[3.313rem]">
                         ADENUGA
                       </h1>
                       <h1
-                        className=" text-black/0 dark:text-white/0 absolute top-0  left-0 stroke font-black text-[172px] z-[3] leading-[160px]"
+                        className=" text-black/0 dark:text-white/0 absolute top-0  left-0 stroke font-black text-[172px] max-[743px]:text-[7.313rem] z-[3] max-[743px]:leading-[100px] leading-[160px] transition-all duration-500 max-[614px]:text-[4.313rem] max-[614px]:leading-none max-[338px]:text-[3.313rem]"
                         style={{
                           WebkitTextStrokeWidth: "2px",
                           WebkitTextStrokeColor: darkMode ? "white" : "black",
@@ -55,7 +55,7 @@ const Hero = () => {
                         ADENUGA
                       </h1>
                       <div className=" flex justify-end ">
-                        <h2 className=" text-black dark:text-white font-light text-[23px] ">
+                        <h2 className=" text-black dark:text-white font-light text-[23px] max-[614px]:z-[10]">
                           ADEWUMI EFE
                         </h2>
                       </div>
@@ -67,7 +67,7 @@ const Hero = () => {
                       width={100}
                       height={100}
                       priority
-                      className="h-[70vh] w-full object-fill z-[2]"
+                      className="h-[70dvh] w-full object-fill max-[743px]:object-cover z-[2]"
                     />
                     <h1 className="absolute z-[-1] right-[-320px] dark:text-[#1a1a1a6e] text-[#CBCBCB6e] text-[500px] font-black ">
                       B
@@ -79,11 +79,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="relative left-[5%] bottom-[60px] z-[10] w-fit">
+      <div className="relative max-[743px]:absolute max-[743px]:mb-12  left-[5%] bottom-[60px] z-[10] w-fit max-[743px]:w-full max-[743px]:left-0 max-[743px]:bottom-0">
         <Swiper
           direction={"vertical"}
           centeredSlides={true}
-          slidesPerView={3}
+          slidesPerView={2}
           loop={true}
           spaceBetween={20}
           autoplay={{
@@ -91,7 +91,7 @@ const Hero = () => {
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
-          className="h-[200px] w-fit"
+          className="h-[200px] max-[743px]:h-[110px] w-fit "
         >
           {HeroWhatIDo.map((item, index) => (
             <SwiperSlide key={index} className={` flex h-fit w-fit`}>

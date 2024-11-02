@@ -17,11 +17,17 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#FFB901",
+        "deep-green": "#001614",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        druk: ["var(--font-druk)"],
+        "atype-normal": ["var(--font-atype-normal)"],
+        "atype-light": ["var(--font-atype-light)"],
       },
     },
   },

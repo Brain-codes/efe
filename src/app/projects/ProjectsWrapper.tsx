@@ -31,7 +31,7 @@ const ProjectsWrapper = () => {
       <div
         className={`${
           isOpen ? "fixed top-[90%]" : "fixed top-0"
-        } "bg-white dark:bg-[#010101] h-[100vh] md:overflow-y-auto overflow-y-scroll flex items-center justify-between px-[5%] md:flex-row flex-col md:pt-0 pt-20 transition-all duration-500`}
+        } "bg-white dark:bg-[#010101] h-[100dvh] md:overflow-y-auto overflow-y-scroll flex items-center justify-between px-[5%] md:flex-row flex-col md:pt-0 pt-20 transition-all duration-500`}
       >
         <h1 className="text-primary leading-none font-extrabold md:text-[86px] text-[56px] md:mb-0 mb-10">
           Projects
@@ -73,7 +73,7 @@ const ProjectsWrapper = () => {
                   width={10000}
                   height={10000}
                   priority
-                  className="h-[20vh] w-full object-cover"
+                  className="h-[20dvh] w-full object-cover"
                 />{" "}
                 <div className="border-l-primary py-7 px-7 border-l-[3px] w-full bg-white/70 dark:bg-primary/10">
                   {item.content.map((con, contentIndex) => (
