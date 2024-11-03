@@ -1,15 +1,17 @@
+"use client";
+
 import React from "react";
 import PATTERNBG from "../../../public/images/patternBG.svg";
-import { useIsMobile } from '../../hooks/useIsMobile';
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 interface GlowPatternLayoutProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({ 
+const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
   children,
-  className = "" 
+  className = "",
 }) => {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const isMobile = useIsMobile();
@@ -25,20 +27,19 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
       style={{ isolation: "isolate" }}
     >
       {/* Content Layer */}
-      <div className="absolute inset-0" 
-           style={{ zIndex: 30 }}>
+      <div className="absolute inset-0" style={{ zIndex: 30 }}>
         {children}
       </div>
 
       {/* Pattern Background Layer */}
       <div
         className="absolute inset-0"
-        style={{ 
+        style={{
           backgroundImage: `url(${PATTERNBG.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          zIndex: 20 
+          zIndex: 20,
         }}
       />
 
@@ -57,7 +58,7 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
             opacity: 0.5,
             transform: "translate3d(0, 0, 0)",
             willChange: "transform",
-            zIndex: 10
+            zIndex: 10,
           }}
         />
       )}
@@ -76,7 +77,7 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
               borderRadius: "50%",
               filter: "blur(100px)",
               opacity: 0.5,
-              zIndex: 10
+              zIndex: 10,
             }}
           />
           <div
@@ -90,7 +91,7 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
               borderRadius: "50%",
               filter: "blur(100px)",
               opacity: 0.5,
-              zIndex: 10
+              zIndex: 10,
             }}
           />
         </>
@@ -99,4 +100,4 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
   );
 };
 
-export default GlowPatternLayout; 
+export default GlowPatternLayout;

@@ -1,5 +1,4 @@
-"use client";
-import React from "react";
+import ClientWrapper from "@/components/ClientWrapper";
 import Wrapper from "./Wrapper";
 import { ToggleProvider } from "@/components/context/ToggleContext";
 import { DarkModeProvider } from "@/components/context/DarkModeContext";
@@ -8,7 +7,7 @@ import { CursorProvider } from "@/components/context/CursorProvider";
 
 export default function Home() {
   return (
-    <main>
+    <ClientWrapper>
       <DarkModeProvider>
         <ToggleProvider>
           <CursorProvider>
@@ -17,6 +16,6 @@ export default function Home() {
           </CursorProvider>
         </ToggleProvider>
       </DarkModeProvider>
-    </main>
+    </ClientWrapper>
   );
 }

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import { drukWide, atypNormal, atypLight } from "../fonts";
-import SmoothScroll from "@/components/Lenis/SmoothScroll";
-import PageTransition from "@/components/Transitions/PageTransition";
+import { drukWide, atypNormal, atypLight } from "../../src/fonts";
 import { TransitionProvider } from "@/components/context/TransitionContext";
 
 const inter = Outfit({ subsets: ["latin"] });
@@ -44,12 +42,7 @@ export default function RootLayout({
       <body
         className={`${drukWide.variable} ${atypNormal.variable} ${atypLight.variable}`}
       >
-        <SmoothScroll>
-          <TransitionProvider>
-            <PageTransition />
-            {children}
-          </TransitionProvider>
-        </SmoothScroll>
+        <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>
   );

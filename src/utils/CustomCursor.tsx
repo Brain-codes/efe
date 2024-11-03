@@ -1,3 +1,5 @@
+"use client";
+
 import { useCursor } from "@/components/context/CursorProvider";
 import { useDarkMode } from "@/components/context/DarkModeContext";
 import React, { useState, useEffect } from "react";
