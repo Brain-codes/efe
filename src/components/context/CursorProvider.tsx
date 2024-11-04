@@ -6,25 +6,40 @@ interface CursorProviderProps {
   children: ReactNode;
 }
 
+interface CursorState {
+  width: string;
+  height: string;
+  label: string | React.ReactNode;
+  showBackground?: boolean;
+  mixBlendMode?: string;
+}
+
 const CursorContext = createContext<any>(null);
 
-export const CursorProvider = ({ children }: CursorProviderProps) => {
-  const [cursorState, setCursorState] = useState({
-    width: "60px",
-    height: "60px",
-    label: "", // Add label to the state
-  });
+const initialCursorState: CursorState = {
+  width: "60px",
+  height: "60px",
+  label: "",
+  showBackground: true,
+  mixBlendMode: "difference",
+};
 
-  const updateCursorState = (state: {
-    width: string;
-    height: string;
-    label: string;
-  }) => {
-    setCursorState(state);
+export const CursorProvider = ({ children }: CursorProviderProps) => {
+  const [cursorState, setCursorState] = useState<CursorState>(initialCursorState);
+
+  const updateCursorState = (state: Partial<CursorState>) => {
+    setCursorState(prev => ({
+      ...prev,
+      ...state
+    }));
+  };
+
+  const resetCursorState = () => {
+    setCursorState(initialCursorState);
   };
 
   return (
-    <CursorContext.Provider value={{ cursorState, updateCursorState }}>
+    <CursorContext.Provider value={{ cursorState, updateCursorState, resetCursorState }}>
       {children}
     </CursorContext.Provider>
   );

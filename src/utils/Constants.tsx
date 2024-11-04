@@ -1,3 +1,4 @@
+// import { AccordionItem } from "@/app/projects/ProjectsWrapper";
 import { AccordionItem } from "@/app/projects/ProjectsWrapper";
 import {
   Express,
@@ -206,4 +207,40 @@ export const accordionItems: AccordionItem[] = [
     link: "https://escrowservice.netlify.app/",
     image: ["/images/escrow.png"],
   },
+];
+
+export const worksData = [
+  {
+    backgroundColor: "#003018",
+    title: "Imkash Group",
+    description:
+      "Imkash Group of Companies is a conglomerate Company that is highly diversified. It houses a set of companies offering a medley of services in Nigeria across specialised sectors of the Nigerian economy.",
+    image: "/images/imkashOne.png",
+    link: "https://imkashgroup.com/",
+  },
+  {
+    backgroundColor: "#00449C",
+    title: "Reni Store",
+    description:
+      "Renistore is an online store dedicated to helping vendors and buyers purchase countless goods using their store software.",
+    image: "/images/renistore.png",
+    link: "https://www.reni.store",
+  },
+  {
+    backgroundColor: "#008892",
+    title: "Sabi Consulting",
+    description:
+      "Sabi Consulting offers professional consulting services across various fields.",
+    image: "/images/sabi.png",
+    link: "https://www.sabiconsult.org",
+  },
+  {
+    backgroundColor: "#00449C",
+    title: "Reni Store",
+    description:
+      "Renistore is an online store dedicated to helping vendors and buyers purchase countless goods using their store software.",
+    image: "/images/renistore.png",
+    link: "https://www.reni.store",
+  },
+  // Add more work objects as needed
 ];

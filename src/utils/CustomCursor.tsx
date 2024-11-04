@@ -11,6 +11,7 @@ const CustomCursor = () => {
   const { cursorState } = useCursor();
   const [cursorStyle, setCursorStyle] = useState<React.CSSProperties>({});
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isElement, setIsElement] = useState(false);
 
   // Handle screen resize to check if the screen width is <= 749px
   useEffect(() => {
@@ -31,27 +32,47 @@ const CustomCursor = () => {
   }, []);
 
   useEffect(() => {
+    // Update isElement whenever cursorState.label changes
+    setIsElement(React.isValidElement(cursorState.label));
+  }, [cursorState.label]);
+
+  useEffect(() => {
     const newCursorStyle: React.CSSProperties = {
       width: cursorState.width,
       height: cursorState.height,
       borderRadius: "50%",
-      backgroundColor: darkMode ? "white" : "white",
-      mixBlendMode: darkMode ? "difference" : "difference",
+      backgroundColor:
+        cursorState.showBackground !== false
+          ? darkMode
+            ? "white"
+            : "white"
+          : "transparent",
+      mixBlendMode: cursorState.mixBlendMode || "difference",
       position: "fixed",
       zIndex: 9999,
       pointerEvents: "none",
-      transition:
-        "transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out",
-      transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px) translate(-50%, -50%)`,
+      transition: isElement
+        ? "transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out, scale 0.3s ease-out"
+        : "transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out",
+      transform: `translate(${cursorPosition.x}px, ${
+        cursorPosition.y
+      }px) translate(-50%, -50%) ${isElement ? "scale(1)" : ""}`,
       opacity: visible ? 1 : 0,
       display: isSmallScreen ? "none" : "flex",
       alignItems: "center",
       justifyContent: "center",
       color: darkMode ? "black" : "black",
-      fontSize: "14px", // Adjust font size as needed
+      fontSize: "14px",
     };
     setCursorStyle(newCursorStyle);
-  }, [darkMode, cursorState, cursorPosition, visible, isSmallScreen]);
+  }, [
+    darkMode,
+    cursorState,
+    cursorPosition,
+    visible,
+    isSmallScreen,
+    isElement,
+  ]);
 
   useEffect(() => {
     const handleMouseMove = (e: { clientX: any; clientY: any }) => {
@@ -74,15 +95,18 @@ const CustomCursor = () => {
 
   return (
     <div style={cursorStyle} aria-hidden="true">
-      <p
-        className="uppercase font-semibold"
-        style={{
-          textTransform: "uppercase",
-        }}
-      >
-        {cursorState.label}
-      </p>
-      {/* Render the label */}
+      {typeof cursorState.label === "string" ? (
+        <p className="uppercase font-semibold">{cursorState.label}</p>
+      ) : (
+        <div
+          style={{
+            transform: `scale(${isElement ? 1 : 0})`,
+            transition: "transform 0.3s ease-out",
+          }}
+        >
+          {cursorState.label}
+        </div>
+      )}
     </div>
   );
 };

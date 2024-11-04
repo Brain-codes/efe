@@ -36,7 +36,7 @@ const Wrapper = () => {
       <HeroPage />
       <AboutHero />
       <HeroWork />
-      <HeroStatsAndBrand/>
+      <HeroStatsAndBrand />
     </>
     // <>
     //   {!underConstruction ? (
