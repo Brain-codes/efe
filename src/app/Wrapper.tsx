@@ -18,6 +18,7 @@ import AboutHero from "./AboutHero";
 import HeroWork from "./HeroWork";
 import NavbarTwo from "@/components/Navbar/NavbarTwo";
 import HeroStatsAndBrand from "./HeroStatsAndBrand";
+import HeroPractices from "./HeroPractices";
 
 const Wrapper = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -36,6 +37,7 @@ const Wrapper = () => {
       <HeroPage />
       <AboutHero />
       <HeroWork />
+      <HeroPractices />
       <HeroStatsAndBrand />
     </>
     // <>

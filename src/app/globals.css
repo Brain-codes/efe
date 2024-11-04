@@ -4,12 +4,12 @@
 
 * {
   @apply duration-300 transition-colors;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 *::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }
 
 @keyframes fadeIn {
@@ -54,4 +54,54 @@
 .accordion-content.open {
   max-height: 1000px; /* Adjust as needed */
   opacity: 1;
+}
+
+/* Adjusted Swiper slide styles */
+.practices-swiper-cont > .swiper-wrapper > .swiper-slide {
+  width: 100%; /* Set to 100% to allow full width */
+  height: auto; /* Use auto for height */
+}
+
+/* Add media query for screens 640px or less */
+@media (max-width: 640px) {
+  .practices-swiper-cont > .swiper-wrapper > .swiper-slide {
+    /* margin-right: 0 !important; */
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    margin-right: 2.5%;
+    width: calc(100% - 5%); /* Adjust width to account for padding */
+  }
+}
+
+.fixed-custom-scrollbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 8px; /* Width of the scrollbar */
+  background-color: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.fixed-custom-scrollbar .thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+  width: 100%; /* Full width */
+  transition: background-color 0.3s;
+}
+
+.fixed-custom-scrollbar .thumb:hover {
+  background-color: #555; /* Color on hover */
+}
+
+.slick-brand-cont > .slick-list {
+  width: 100%;
+}
+
+.slick-brand-cont > .slick-list > .slick-track {
+  display: flex;
+}
+.slick-brand-cont > .slick-list > .slick-track > .slick-slide {
+  margin-right: 40px !important;
+  border-radius: 8px;
+  height: fit-content;
 }

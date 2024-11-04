@@ -7,11 +7,13 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 interface GlowPatternLayoutProps {
   children: React.ReactNode;
   className?: string;
+  height?: string;
 }
 
 const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
   children,
   className = "",
+  height = "100dvh"
 }) => {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const isMobile = useIsMobile();
@@ -23,7 +25,7 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
   return (
     <div
       onMouseMove={!isMobile ? handleMouseMove : undefined}
-      className={`overflow-hidden relative w-full h-full min-h-screen bg-deep-green ${className}`}
+      className={`relative w-full h-full min-h-[100dvh] bg-deep-green ${className}`}
       style={{ isolation: "isolate" }}
     >
       {/* Content Layer */}
@@ -33,7 +35,7 @@ const GlowPatternLayout: React.FC<GlowPatternLayoutProps> = ({
 
       {/* Pattern Background Layer */}
       <div
-        className="absolute inset-0"
+        className={`absolute inset-0 h-[${height}]`}
         style={{
           backgroundImage: `url(${PATTERNBG.src})`,
           backgroundSize: "cover",

@@ -244,3 +244,48 @@ export const worksData = [
   },
   // Add more work objects as needed
 ];
+
+export const CODINGPRACTICES = [
+  {
+    title: "Clarity-Driven",
+    description:
+      "I prioritize writing clean and readable code, using meaningful names and consistent formatting. By keeping functions small and focused, I ensure that the logic is easily understandable, facilitating collaboration and maintenance.",
+    image: "/images/rd.svg",
+  },
+  {
+    title: "Efficiency-Oriented",
+    description:
+      "I strive to optimize performance by utilizing efficient algorithms and data structures, while minimizing resource usage. I avoid premature optimization, focusing first on clarity and correctness before fine-tuning for performance.",
+    image: "/images/eo.svg",
+  },
+  {
+    title: "Modularity-Focused",
+    description:
+      "I write modular code that adheres to the Single Responsibility Principle, ensuring that each function or component has a distinct purpose. This approach promotes reusability, easier debugging, and a more organized codebase.",
+    image: "/images/mf.svg",
+  },
+  {
+    title: "Quality-Centric",
+    description:
+      "I implement rigorous testing practices, including unit and integration tests, to ensure my code functions as intended. By using linters and formatters, I maintain high standards of code quality and consistency throughout the project.",
+    image: "/images/rd.svg",
+  },
+  {
+    title: "Security-Conscious",
+    description:
+      "I prioritize security in my code by validating user inputs, handling errors gracefully, and securing sensitive data. I adhere to best practices to prevent vulnerabilities and ensure a safe user experience.",
+    image: "/images/eo.svg",
+  },
+  {
+    title: "Maintainability-Oriented",
+    description:
+      "I document my code thoroughly and follow version control best practices to facilitate easier updates and collaboration. Regular refactoring keeps the codebase manageable and adaptable to future needs.",
+    image: "/images/rd.svg",
+  },
+  {
+    title: "Continuous-Learning Mindset",
+    description:
+      "I stay informed about the latest technologies and coding standards, continually enhancing my skills and knowledge. I actively participate in code reviews to learn from peers and adopt new best practices as they emerge.",
+    image: "/images/mf.svg",
+  },
+];

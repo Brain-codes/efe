@@ -3,6 +3,7 @@
 import SmoothScroll from "@/components/Lenis/SmoothScroll";
 import PageTransition from "@/components/Transitions/PageTransition";
 import { TransitionProvider } from "@/components/context/TransitionContext";
+import FixedCustomScrollbar from "./FixedCustomScrollbar";
 
 export default function ClientWrapper({
   children,
@@ -11,10 +12,11 @@ export default function ClientWrapper({
 }) {
   return (
     <TransitionProvider>
+      <FixedCustomScrollbar />
       <SmoothScroll>
         <PageTransition />
         {children}
       </SmoothScroll>
     </TransitionProvider>
   );
-} 
+}
