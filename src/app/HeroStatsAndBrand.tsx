@@ -45,8 +45,8 @@ const HeroStatsAndBrand = () => {
       {
         breakpoint: 480, // For screens below 480px
         settings: {
-          slidesToShow: 2, // Show 2 slides
-          slidesToScroll: 2, // Scroll 1 slide at a time
+          slidesToShow: 1, // Show 2 slides
+          slidesToScroll: 1, // Scroll 1 slide at a time
         },
       },
       {
@@ -71,7 +71,7 @@ const HeroStatsAndBrand = () => {
 
   return (
     <GlowPatternLayout
-      className="!h-[140dvh] mb-[20dvh] overflow-hidden"
+      className="!h-[140dvh] overflow-hidden"
       height="140dvh"
     >
       <div className="h-full">

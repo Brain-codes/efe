@@ -10,14 +10,14 @@ import { Pagination } from "swiper/modules";
 
 const HeroPractices = () => {
   return (
-    <div className="bg-[#E1FFF6] py-[10dvh]">
+    <div className="bg-[#E1FFF6] md:py-[10dvh] py-[5dvh]">
       <div className="mx-[5%] pb-5 border-b-deep-green border-b">
-        <AnimatedText.h1 className="font-druk uppercase text-left leading-[139.2%] md:text-[64px] text-[6dvw] text-deep-green mt-56">
+        <AnimatedText.h1 className="font-druk uppercase text-left leading-[139.2%] md:text-[64px] text-[6dvw] text-deep-green md:mt-56">
           My Coding <br /> Practices
         </AnimatedText.h1>
       </div>
       <Swiper
-        slidesPerView={3}
+        // slidesPerView={3}
         pagination={true}
         // rewind={true}
         autoHeight={true}
@@ -43,25 +43,27 @@ const HeroPractices = () => {
       >
         {CODINGPRACTICES.map((item, index) => (
           <SwiperSlide key={index}>
-            <div
-              className={`flex flex-col gap-6 p-6 bg-deep-green md:ml-[15%] ml-0 md:w-[448px] w-full ${
-                index === 0 ? "" : ""
-              }`}
-              style={{ height: "fit-content" }}
-            >
-              <img src={item.image} alt="" className="w-full" />
-              <AnimatedText.h1 className="font-druk uppercase text-left leading-[139.2%] md:text-[30px] text-[20px] text-primary">
-                {item.title.split("-")[0]}-<br />
-                {item.title.split("-")[1]}
-              </AnimatedText.h1>
-              <AnimatedText.p
-                className="md:text-[16px] text-[12px] font-atype-normal text-[#ECFFFD] text-left font-[400]"
-                animationType="words"
-                variant="scrub"
+            <AnimatedText.div variant="scale">
+              <div
+                className={`!flex flex-col !gap-6 p-6 bg-deep-green md:ml-[15%] ml-0 md:w-[448px] w-full ${
+                  index === 0 ? "" : ""
+                }`}
+                style={{ height: "fit-content" }}
               >
-                {item.description}
-              </AnimatedText.p>
-            </div>
+                <img src={item.image} alt="" className="w-full" />
+                <h1 className="font-druk uppercase text-left leading-[139.2%] md:text-[30px] text-[20px] text-primary">
+                  {item.title.split("-")[0]}-<br />
+                  {item.title.split("-")[1]}
+                </h1>
+                <p
+                  className="md:text-[16px] text-[12px] font-atype-normal text-[#ECFFFD] text-left font-[400]"
+                  //   animationType="words"
+                  //   variant="scrub"
+                >
+                  {item.description}
+                </p>
+              </div>
+            </AnimatedText.div>
           </SwiperSlide>
         ))}
       </Swiper>

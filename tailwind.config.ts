@@ -27,6 +27,7 @@ const config: Config = {
       fontFamily: {
         druk: ["var(--font-druk)"],
         "atype-normal": ["var(--font-atype-normal)"],
+        "atype-bold": ["var(--font-atype-bold)"],
         "atype-light": ["var(--font-atype-light)"],
       },
     },

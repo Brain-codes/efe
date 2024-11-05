@@ -12,7 +12,7 @@ export default function ClientWrapper({
 }) {
   return (
     <TransitionProvider>
-      <FixedCustomScrollbar />
+      {/* <FixedCustomScrollbar /> */}
       <SmoothScroll>
         <PageTransition />
         {children}

@@ -17,7 +17,7 @@ const HeroWork = () => {
       scrollTrigger: {
         trigger: ".this-relative-one", // Trigger based on the container
         start: "top top",
-        end: `${worksData.length * 150}%`, // Adjust end based on the number of items
+        end: `${worksData.length * 80}%`, // Adjust end based on the number of items
         scrub: 5,
         // markers: true,
         pin: true, // Pin the container in place

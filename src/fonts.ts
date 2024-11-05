@@ -10,6 +10,11 @@ export const atypNormal = localFont({
   variable: "--font-atype-normal",
 });
 
+export const atypBold = localFont({
+  src: "../public/fonts/AtypDisplay-Bold.ttf",
+  variable: "--font-atype-bold",
+});
+
 export const atypLight = localFont({
   src: "../public/fonts/AtypeLight.ttf",
   variable: "--font-atype-light",
