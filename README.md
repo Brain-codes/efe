@@ -1,4 +1,3 @@
-```markdown:README.md
 # **FUNDAH Mobile Flutter App**
 
 This is the **FUNDAH Mobile** app built using Flutter. It’s designed to offer a smooth experience with beautiful animations and user interactions. This documentation will guide you through setting up the project, whether you are using **FVM** (Flutter Version Management) or the standard Flutter installation.
@@ -173,5 +172,3 @@ Feel free to fork the repository, make changes, and submit a pull request. Ensur
 ### **License**
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 ```
-
-This new README provides detailed setup instructions for both FVM and manual Flutter setup, along with additional sections for running the project, common issues, and contributing.
