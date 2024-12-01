@@ -112,7 +112,7 @@ const HeroPage = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-[#001614e6] py-[6rem]">
+      <div className="bg-[#000e0de6] py-[6rem]">
         <div className="flex flex-col items-center justify-center h-full ">
           <AnimatedText.h1 className="font-druk uppercase text-center leading-[107.6%] md:text-[87px] text-[11dvw] text-primary md:mt-24 px-[5%]">
             ONE{" "}
