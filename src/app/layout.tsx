@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { drukWide, atypNormal, atypLight } from "../../src/fonts";
 import { TransitionProvider } from "@/components/context/TransitionContext";
 
 const inter = Outfit({ subsets: ["latin"] });
+const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Adenuga Adewumi Efe",
@@ -40,7 +41,7 @@ export default function RootLayout({
         <link rel="icon" href="/images/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${drukWide.variable} ${atypNormal.variable} ${atypLight.variable}`}
+        className={`${drukWide.variable} ${atypNormal.variable} ${atypLight.variable} ${instrumentSerif.className}`}
       >
         <TransitionProvider>{children}</TransitionProvider>
       </body>

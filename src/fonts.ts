@@ -19,3 +19,8 @@ export const atypLight = localFont({
   src: "../public/fonts/AtypeLight.ttf",
   variable: "--font-atype-light",
 });
+
+// export const instrument = localFont({
+//   src: "../public/fonts/AtypeLight.ttf",
+//   variable: "--font-instrument",
+// });

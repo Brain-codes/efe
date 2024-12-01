@@ -29,6 +29,7 @@ const config: Config = {
         "atype-normal": ["var(--font-atype-normal)"],
         "atype-bold": ["var(--font-atype-bold)"],
         "atype-light": ["var(--font-atype-light)"],
+        instrument: ["var(--font-instrument-serif)"],
       },
     },
   },
